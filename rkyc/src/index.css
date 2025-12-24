@@ -1,0 +1,186 @@
+@import url('https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/static/pretendard.css');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* RKYC Design System - SoFi-inspired Professional Fintech */
+    
+    /* Core palette - Muted blues and professional grays */
+    --background: 210 20% 98%;
+    --foreground: 215 35% 15%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 215 35% 15%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 215 35% 15%;
+
+    /* Primary - Sophisticated navy blue */
+    --primary: 215 50% 23%;
+    --primary-foreground: 210 40% 98%;
+
+    /* Secondary - Light slate */
+    --secondary: 210 15% 95%;
+    --secondary-foreground: 215 35% 25%;
+
+    /* Muted - Subtle gray-blue */
+    --muted: 210 12% 93%;
+    --muted-foreground: 215 15% 50%;
+
+    /* Accent - Soft blue highlight */
+    --accent: 210 60% 95%;
+    --accent-foreground: 215 50% 23%;
+
+    /* Status colors */
+    --destructive: 0 65% 50%;
+    --destructive-foreground: 0 0% 100%;
+
+    --success: 145 50% 40%;
+    --success-foreground: 0 0% 100%;
+
+    --warning: 38 90% 50%;
+    --warning-foreground: 38 90% 15%;
+
+    --info: 210 60% 50%;
+    --info-foreground: 0 0% 100%;
+
+    /* Signal category colors - clearly differentiated */
+    --signal-direct: 215 65% 45%;
+    --signal-industry: 175 50% 40%;
+    --signal-environment: 35 70% 50%;
+
+    /* Signal status colors */
+    --signal-new: 210 70% 50%;
+    --signal-review: 38 80% 50%;
+    --signal-resolved: 145 45% 45%;
+
+    /* Impact colors */
+    --risk: 0 55% 50%;
+    --opportunity: 145 50% 42%;
+    --insight: 210 60% 50%;
+
+    /* UI elements */
+    --border: 210 20% 88%;
+    --input: 210 20% 88%;
+    --ring: 215 50% 40%;
+
+    --radius: 0.5rem;
+
+    /* Sidebar */
+    --sidebar-background: 215 40% 18%;
+    --sidebar-foreground: 210 20% 90%;
+    --sidebar-primary: 210 60% 70%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 215 35% 25%;
+    --sidebar-accent-foreground: 210 20% 95%;
+    --sidebar-border: 215 30% 25%;
+    --sidebar-ring: 210 60% 60%;
+
+    /* Custom tokens */
+    --surface-elevated: 0 0% 100%;
+    --surface-sunken: 210 15% 96%;
+    --text-primary: 215 35% 15%;
+    --text-secondary: 215 15% 45%;
+    --text-tertiary: 215 12% 60%;
+    --divider: 210 15% 90%;
+  }
+
+  .dark {
+    --background: 215 35% 10%;
+    --foreground: 210 20% 95%;
+
+    --card: 215 30% 14%;
+    --card-foreground: 210 20% 95%;
+
+    --popover: 215 30% 14%;
+    --popover-foreground: 210 20% 95%;
+
+    --primary: 210 60% 70%;
+    --primary-foreground: 215 35% 10%;
+
+    --secondary: 215 25% 20%;
+    --secondary-foreground: 210 20% 90%;
+
+    --muted: 215 25% 18%;
+    --muted-foreground: 210 15% 60%;
+
+    --accent: 215 30% 22%;
+    --accent-foreground: 210 60% 80%;
+
+    --destructive: 0 60% 45%;
+    --destructive-foreground: 0 0% 100%;
+
+    --border: 215 25% 22%;
+    --input: 215 25% 22%;
+    --ring: 210 60% 60%;
+
+    --sidebar-background: 215 40% 8%;
+    --sidebar-foreground: 210 20% 85%;
+    --sidebar-primary: 210 60% 70%;
+    --sidebar-primary-foreground: 215 35% 10%;
+    --sidebar-accent: 215 30% 15%;
+    --sidebar-accent-foreground: 210 20% 90%;
+    --sidebar-border: 215 25% 18%;
+    --sidebar-ring: 210 60% 60%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  html {
+    font-family: 'Pretendard', -apple-system, BlinkMacSystemFont, system-ui, sans-serif;
+  }
+
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-feature-settings: "rlig" 1, "calt" 1;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-semibold tracking-tight text-foreground;
+  }
+}
+
+@layer components {
+  .signal-card {
+    @apply bg-card rounded-lg border border-border p-5 transition-all duration-200;
+    @apply hover:shadow-md hover:border-primary/20;
+  }
+
+  .status-badge {
+    @apply inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-medium;
+  }
+
+  .status-new {
+    @apply bg-[hsl(var(--signal-new)/0.1)] text-[hsl(var(--signal-new))];
+  }
+
+  .status-review {
+    @apply bg-[hsl(var(--signal-review)/0.1)] text-[hsl(var(--signal-review))];
+  }
+
+  .status-resolved {
+    @apply bg-[hsl(var(--signal-resolved)/0.1)] text-[hsl(var(--signal-resolved))];
+  }
+
+  .nav-item {
+    @apply flex items-center gap-3 px-4 py-2.5 rounded-lg text-sidebar-foreground/80 transition-colors;
+    @apply hover:bg-sidebar-accent hover:text-sidebar-foreground;
+  }
+
+  .nav-item-active {
+    @apply bg-sidebar-accent text-sidebar-foreground font-medium;
+  }
+}
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
