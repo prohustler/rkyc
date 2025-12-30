@@ -79,20 +79,20 @@ const navigationItems: NavigationItem[] = [
   },
 ];
 
-const bottomItems: NavigationItem[] = [
-  {
-    id: "notifications",
-    label: "알림 설정",
-    icon: Bell,
-    path: "/notifications",
-  },
-  {
-    id: "settings",
-    label: "설정",
-    icon: Settings,
-    path: "/settings",
-  },
-];
+// const bottomItems: NavigationItem[] = [
+//   {
+//     id: "notifications",
+//     label: "알림 설정",
+//     icon: Bell,
+//     path: "/notifications",
+//   },
+//   {
+//     id: "settings",
+//     label: "설정",
+//     icon: Settings,
+//     path: "/settings",
+//   },
+// ];
 
 export function Sidebar() {
   const [collapsed, setCollapsed] = useState(false);
